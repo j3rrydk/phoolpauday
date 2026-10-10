@@ -735,11 +735,532 @@ function DashboardPage() {
   )
 }
 
+const catalog = [
+  {
+    id: 'monstera-deliciosa',
+    name: 'Monstera Deliciosa',
+    price: 1850,
+    oldPrice: 2200,
+    nursery: 'GreenNest Lahore',
+    location: 'Gulberg',
+    rating: 4.9,
+    category: 'Indoor Plants',
+    image:
+      'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80',
+    ],
+    description:
+      'Large split-leaf foliage for bright indoor spaces, perfect for living rooms and offices.',
+    care: {
+      sunlight: 'Bright indirect light',
+      water: 'Every 5-7 days',
+      soil: 'Well-draining potting mix',
+      difficulty: 'Easy',
+    },
+    badge: 'Best Seller',
+  },
+  {
+    id: 'peace-lily',
+    name: 'Peace Lily',
+    price: 1200,
+    oldPrice: 1500,
+    nursery: 'Leaf & Bloom',
+    location: 'Johar Town',
+    rating: 4.8,
+    category: 'Indoor Plants',
+    image:
+      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80',
+    ],
+    description: 'Elegant foliage and white blooms that bring calm energy to bedrooms and workspaces.',
+    care: {
+      sunlight: 'Medium indirect light',
+      water: 'Every 4-6 days',
+      soil: 'Rich moisture-retaining mix',
+      difficulty: 'Easy',
+    },
+    badge: 'Air Purifier',
+  },
+  {
+    id: 'bougainvillea',
+    name: 'Bougainvillea',
+    price: 2400,
+    oldPrice: 2800,
+    nursery: 'Lahore Garden Co.',
+    location: 'DHA',
+    rating: 4.9,
+    category: 'Outdoor',
+    image:
+      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80',
+    ],
+    description: 'A vibrant climber bursting with colour, ideal for balconies, boundary walls, and patios.',
+    care: {
+      sunlight: 'Full sun',
+      water: 'Twice a week',
+      soil: 'Loamy soil with drainage',
+      difficulty: 'Moderate',
+    },
+    badge: 'Sunny Patio',
+  },
+  {
+    id: 'basil-basket',
+    name: 'Basil Basket',
+    price: 950,
+    oldPrice: 1200,
+    nursery: 'HerbHub City',
+    location: 'Model Town',
+    rating: 4.7,
+    category: 'Herbs',
+    image:
+      'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80',
+    ],
+    description: 'Fresh aromatic basil for kitchens, rooftops, and home herb collections.',
+    care: {
+      sunlight: 'Partial to full sun',
+      water: 'Every 2-3 days',
+      soil: 'Nutrient-rich potting soil',
+      difficulty: 'Easy',
+    },
+    badge: 'Fresh Harvest',
+  },
+  {
+    id: 'snake-plant',
+    name: 'Snake Plant',
+    price: 1100,
+    oldPrice: 1400,
+    nursery: 'Urban Greens',
+    location: 'Allama Iqbal Town',
+    rating: 4.8,
+    category: 'Indoor Plants',
+    image:
+      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80',
+    ],
+    description: 'Hardy, sculptural foliage for beginners who want low-maintenance greenery.',
+    care: {
+      sunlight: 'Low to bright indirect light',
+      water: 'Every 10-14 days',
+      soil: 'Fast-draining mix',
+      difficulty: 'Very Easy',
+    },
+    badge: 'Low Maintenance',
+  },
+  {
+    id: 'rose-bush',
+    name: 'Rose Bush',
+    price: 1650,
+    oldPrice: 2000,
+    nursery: 'Bloom & Root',
+    location: 'Wapda Town',
+    rating: 4.9,
+    category: 'Flowering',
+    image:
+      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80',
+    ],
+    description: 'Fragrant flowering plant perfect for terraces and garden corners in Lahore.',
+    care: {
+      sunlight: 'Full sun',
+      water: 'Every 3-4 days',
+      soil: 'Organic-rich soil',
+      difficulty: 'Moderate',
+    },
+    badge: 'Fragrant',
+  },
+]
+
+function ShopPage() {
+  const [category, setCategory] = useState('All')
+  const [sortBy, setSortBy] = useState('featured')
+
+  const categories = ['All', ...new Set(catalog.map((plant) => plant.category))]
+
+  const visiblePlants = [...catalog]
+    .filter((plant) => category === 'All' || plant.category === category)
+    .sort((a, b) => {
+      if (sortBy === 'price-low') return a.price - b.price
+      if (sortBy === 'price-high') return b.price - a.price
+      if (sortBy === 'rating') return b.rating - a.rating
+      return b.rating - a.rating
+    })
+
+  return (
+    <div className="min-h-screen bg-[#fafaf5] text-[#212121]">
+      <header className="border-b border-[#e9dfd7] bg-[#fffefb]">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+          <Link to="/" className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#2E7D32] to-[#4CAF50] text-base font-black text-white">
+              P
+            </div>
+            <div>
+              <div className="text-base font-extrabold">PhoolPauday</div>
+            </div>
+          </Link>
+
+          <nav className="hidden items-center gap-6 text-sm font-medium text-[#4d4d4d] md:flex">
+            <Link to="/shop">Shop</Link>
+            <Link to="/auth">Login</Link>
+            <Link to="/dashboard">Dashboard</Link>
+          </nav>
+
+          <Link to="/checkout" className="rounded-full bg-[#FFC107] px-4 py-2 text-sm font-bold text-[#1d1d1d] shadow-lg shadow-yellow-200">
+            Cart (2)
+          </Link>
+        </div>
+      </header>
+
+      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mb-6 flex flex-col gap-4 rounded-[28px] border border-[#e8dfd7] bg-white p-5 shadow-[0_18px_35px_rgba(39,33,28,0.04)] lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#2E7D32]">Plant marketplace</div>
+            <h1 className="mt-2 text-3xl font-black tracking-[-0.05em] text-[#171717]">Fresh finds for Lahore homes</h1>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="rounded-full border border-[#e8dfd7] bg-[#faf7f4] px-3 py-2 text-sm text-[#565656]">
+              24 products available
+            </div>
+            <div className="rounded-full border border-[#e8dfd7] bg-[#faf7f4] px-3 py-2 text-sm text-[#565656]">
+              Lahore delivery • 6 areas
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-8 grid gap-4 lg:grid-cols-[220px_1fr]">
+          <aside className="rounded-[28px] border border-[#e9e0d7] bg-white p-5 shadow-[0_18px_35px_rgba(39,33,28,0.04)]">
+            <div className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-[#2E7D32]">Filters</div>
+            <div className="space-y-3">
+              {categories.map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => setCategory(item)}
+                  className={`w-full rounded-2xl border px-3 py-2.5 text-left text-sm font-semibold transition ${
+                    category === item
+                      ? 'border-[#2E7D32] bg-[#edf7ee] text-[#1d1d1d]'
+                      : 'border-[#ece3dc] bg-[#faf7f4] text-[#5c5c5c]'
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          </aside>
+
+          <section>
+            <div className="mb-5 flex flex-col justify-between gap-3 rounded-[26px] border border-[#e9e0d7] bg-white p-4 shadow-[0_18px_35px_rgba(39,33,28,0.04)] sm:flex-row sm:items-center">
+              <div className="text-sm text-[#5a5a5a]">Showing {visiblePlants.length} plants</div>
+              <label className="flex items-center gap-3 text-sm text-[#4c4c4c]">
+                Sort by
+                <select
+                  value={sortBy}
+                  onChange={(event) => setSortBy(event.target.value)}
+                  className="rounded-full border border-[#e5dcd6] bg-[#faf7f4] px-3 py-2 outline-none"
+                >
+                  <option value="featured">Featured</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Top Rated</option>
+                </select>
+              </label>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {visiblePlants.map((plant) => (
+                <article key={plant.id} className="overflow-hidden rounded-[28px] border border-[#ece3dc] bg-white shadow-[0_18px_35px_rgba(39,33,28,0.04)]">
+                  <div className="relative overflow-hidden">
+                    <img src={plant.image} alt={plant.name} className="h-72 w-full object-cover transition duration-500 hover:scale-105" />
+                    <span className="absolute left-4 top-4 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#2E7D32]">
+                      {plant.badge}
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <div className="flex items-center justify-between gap-3">
+                      <h3 className="text-xl font-bold text-[#1d1d1d]">{plant.name}</h3>
+                      <span className="text-lg font-black text-[#2E7D32]">Rs. {plant.price}</span>
+                    </div>
+                    <div className="mt-2 flex items-center gap-2 text-sm text-[#666]">
+                      <span>⭐ {plant.rating}</span>
+                      <span>•</span>
+                      <span>{plant.location}</span>
+                    </div>
+                    <p className="mt-2 text-sm text-[#5c5c5c]">{plant.nursery}</p>
+                    <div className="mt-5 flex items-center justify-between gap-3">
+                      <Link to={`/product/${plant.id}`} className="rounded-full border border-[#d9d1ca] bg-[#f7f5f3] px-3.5 py-2 text-sm font-semibold text-[#2d2d2d]">
+                        Quick view
+                      </Link>
+                      <Link to="/checkout" className="rounded-full bg-[#FFC107] px-4 py-2.5 text-sm font-bold text-[#1a1a1a] shadow-md shadow-yellow-200">
+                        Add to cart
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  )
+}
+
+function ProductDetailPage() {
+  const { id } = useParams()
+  const product = catalog.find((item) => item.id === id)
+
+  if (!product) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#fafaf5] text-[#212121]">
+        <div className="rounded-[28px] border border-[#e8dfd7] bg-white p-8 text-center shadow-[0_18px_35px_rgba(39,33,28,0.04)]">
+          <h1 className="text-2xl font-black">Plant not found</h1>
+          <Link to="/shop" className="mt-4 inline-block rounded-full bg-[#2E7D32] px-5 py-2.5 text-sm font-bold text-white">
+            Back to shop
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  const similar = catalog.filter((item) => item.category === product.category && item.id !== product.id).slice(0, 3)
+
+  return (
+    <div className="min-h-screen bg-[#fafaf5] text-[#212121]">
+      <header className="border-b border-[#e9dfd7] bg-[#fffefb]">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+          <Link to="/" className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#2E7D32] to-[#4CAF50] text-base font-black text-white">
+              P
+            </div>
+            <div>
+              <div className="text-base font-extrabold">PhoolPauday</div>
+            </div>
+          </Link>
+
+          <div className="flex items-center gap-3">
+            <Link to="/shop" className="rounded-full border border-[#d9d2cb] bg-white px-4 py-2 text-sm font-semibold text-[#1d1d1d]">
+              Back to shop
+            </Link>
+            <Link to="/checkout" className="rounded-full bg-[#FFC107] px-4 py-2 text-sm font-bold text-[#1d1d1d] shadow-md shadow-yellow-200">
+              Cart (2)
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="space-y-4">
+            <div className="overflow-hidden rounded-[28px] border border-[#e8dfd7] bg-white p-3 shadow-[0_18px_35px_rgba(39,33,28,0.04)]">
+              <img src={product.gallery[0]} alt={product.name} className="h-[440px] w-full rounded-[22px] object-cover" />
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {product.gallery.map((image, index) => (
+                <div key={image} className="overflow-hidden rounded-[20px] border border-[#ece3dc] bg-white p-2">
+                  <img src={image} alt={`${product.name} view ${index + 1}`} className="h-28 w-full rounded-[14px] object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[32px] border border-[#e8dfd7] bg-white p-6 shadow-[0_18px_35px_rgba(39,33,28,0.04)] sm:p-8">
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <span className="rounded-full bg-[#edf7ee] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#2E7D32]">
+                {product.badge}
+              </span>
+              <span className="text-sm font-semibold text-[#5c5c5c]">⭐ {product.rating} rating</span>
+            </div>
+
+            <h1 className="text-4xl font-black tracking-[-0.05em] text-[#171717]">{product.name}</h1>
+            <p className="mt-2 text-sm text-[#666]">{product.nursery} • {product.location}</p>
+
+            <div className="mt-5 flex items-end gap-3">
+              <span className="text-3xl font-black text-[#2E7D32]">Rs. {product.price}</span>
+              <span className="text-lg text-[#8b8b8b] line-through">Rs. {product.oldPrice}</span>
+            </div>
+
+            <p className="mt-5 text-base leading-7 text-[#545454]">{product.description}</p>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <Link to="/checkout" className="rounded-full bg-[#2E7D32] px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-green-200">
+                Add to cart
+              </Link>
+              <Link to="/checkout" className="rounded-full bg-[#FFC107] px-5 py-3 text-center text-sm font-bold text-[#1d1d1d] shadow-lg shadow-yellow-200">
+                Buy now
+              </Link>
+            </div>
+
+            <div className="mt-6 rounded-[24px] bg-[#f9f4f1] p-4">
+              <div className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-[#6d5247]">Care guide</div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {Object.entries(product.care).map(([label, value]) => (
+                  <div key={label} className="rounded-2xl bg-white p-3">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#6a6a6a]">{label}</div>
+                    <div className="mt-1 text-sm font-semibold text-[#1f1f1f]">{value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section className="mt-12">
+          <div className="mb-5 flex items-center justify-between gap-3">
+            <h2 className="text-2xl font-black tracking-[-0.04em] text-[#171717]">Similar plants</h2>
+            <Link to="/shop" className="text-sm font-semibold text-[#2E7D32]">See all</Link>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {similar.map((plant) => (
+              <article key={plant.id} className="overflow-hidden rounded-[28px] border border-[#e8dfd7] bg-white shadow-[0_18px_35px_rgba(39,33,28,0.04)]">
+                <img src={plant.image} alt={plant.name} className="h-56 w-full object-cover" />
+                <div className="p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <h3 className="text-lg font-bold text-[#1f1f1f]">{plant.name}</h3>
+                    <span className="text-sm font-black text-[#2E7D32]">Rs. {plant.price}</span>
+                  </div>
+                  <div className="mt-2 text-sm text-[#666]">{plant.nursery}</div>
+                  <Link to={`/product/${plant.id}`} className="mt-4 inline-block rounded-full bg-[#2E7D32] px-4 py-2 text-sm font-bold text-white">
+                    View plant
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+    </div>
+  )
+}
+
+function CheckoutPage() {
+  return (
+    <div className="min-h-screen bg-[#fafaf5] text-[#212121]">
+      <header className="border-b border-[#e9dfd7] bg-[#fffefb]">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+          <Link to="/shop" className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#2E7D32] to-[#4CAF50] text-base font-black text-white">
+              P
+            </div>
+            <div>
+              <div className="text-base font-extrabold">PhoolPauday</div>
+            </div>
+          </Link>
+          <Link to="/" className="rounded-full border border-[#d9d2cb] bg-white px-4 py-2 text-sm font-semibold text-[#1d1d1d]">
+            Continue shopping
+          </Link>
+        </div>
+      </header>
+
+      <main className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+        <section className="rounded-[30px] border border-[#e8dfd7] bg-white p-6 shadow-[0_18px_35px_rgba(39,33,28,0.04)] sm:p-8">
+          <div className="mb-6 text-xs font-bold uppercase tracking-[0.2em] text-[#2E7D32]">Checkout</div>
+          <h1 className="text-3xl font-black tracking-[-0.05em] text-[#171717]">Delivery details</h1>
+
+          <div className="mt-6 space-y-5">
+            <label className="block text-sm font-medium text-[#3d3d3d]">
+              Full name
+              <input defaultValue="Ayesha Khan" className="mt-1 w-full rounded-2xl border border-[#e5dcd6] bg-[#fbfaf9] px-3 py-2.5 outline-none" />
+            </label>
+
+            <label className="block text-sm font-medium text-[#3d3d3d]">
+              Mobile number
+              <input defaultValue="0300-1234567" className="mt-1 w-full rounded-2xl border border-[#e5dcd6] bg-[#fbfaf9] px-3 py-2.5 outline-none" />
+            </label>
+
+            <label className="block text-sm font-medium text-[#3d3d3d]">
+              Lahore area
+              <select defaultValue="Gulberg" className="mt-1 w-full rounded-2xl border border-[#e5dcd6] bg-[#fbfaf9] px-3 py-2.5 outline-none">
+                <option>Gulberg</option>
+                <option>Johar Town</option>
+                <option>DHA</option>
+                <option>Model Town</option>
+                <option>Allama Iqbal Town</option>
+              </select>
+            </label>
+
+            <label className="block text-sm font-medium text-[#3d3d3d]">
+              Delivery address
+              <textarea defaultValue="House 24, Gulberg III, Lahore" rows="4" className="mt-1 w-full rounded-2xl border border-[#e5dcd6] bg-[#fbfaf9] px-3 py-2.5 outline-none" />
+            </label>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className="block text-sm font-medium text-[#3d3d3d]">
+                Delivery slot
+                <select defaultValue="Morning" className="mt-1 w-full rounded-2xl border border-[#e5dcd6] bg-[#fbfaf9] px-3 py-2.5 outline-none">
+                  <option>Morning</option>
+                  <option>Afternoon</option>
+                  <option>Evening</option>
+                </select>
+              </label>
+
+              <label className="block text-sm font-medium text-[#3d3d3d]">
+                Payment method
+                <select defaultValue="Cash on Delivery" className="mt-1 w-full rounded-2xl border border-[#e5dcd6] bg-[#fbfaf9] px-3 py-2.5 outline-none">
+                  <option>Cash on Delivery</option>
+                  <option>JazzCash</option>
+                  <option>EasyPaisa</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <aside className="rounded-[30px] border border-[#e8dfd7] bg-[#f7f0e9] p-6 shadow-[0_18px_35px_rgba(39,33,28,0.04)] sm:p-8">
+          <h2 className="text-xl font-black tracking-[-0.04em] text-[#171717]">Order summary</h2>
+
+          <div className="mt-6 space-y-4">
+            {[
+              { name: 'Monstera Deliciosa', price: 'Rs. 1,850' },
+              { name: 'Peace Lily', price: 'Rs. 1,200' },
+            ].map((item) => (
+              <div key={item.name} className="flex items-center justify-between gap-4 rounded-2xl bg-white p-3">
+                <div className="font-semibold text-[#1d1d1d]">{item.name}</div>
+                <div className="text-sm font-bold text-[#2E7D32]">{item.price}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 space-y-3 text-sm text-[#555]">
+            <div className="flex items-center justify-between"><span>Subtotal</span><span>Rs. 3,050</span></div>
+            <div className="flex items-center justify-between"><span>Delivery</span><span>Rs. 150</span></div>
+            <div className="flex items-center justify-between"><span>Platform fee</span><span>Rs. 330</span></div>
+            <div className="flex items-center justify-between border-t border-[#e8dfd7] pt-3 text-base font-black text-[#1d1d1d]"><span>Total</span><span>Rs. 3,530</span></div>
+          </div>
+
+          <Link to="/dashboard" className="mt-6 block rounded-full bg-[#2E7D32] px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-green-200">
+            Place order
+          </Link>
+        </aside>
+      </main>
+    </div>
+  )
+}
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/shop" element={<ShopPage />} />
+        <Route path="/product/:id" element={<ProductDetailPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
